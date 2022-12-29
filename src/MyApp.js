@@ -10,8 +10,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container } from 'react-bootstrap';
 
-//Import homepage component
+//Import components
 import { Homepage } from './components/homepage';
+import { Gamepage } from './components/gamepage';
+import { Chesspage } from './components/chesspage';
+import { Comedypage } from './components/comedypage';
+import { Filmpage } from './components/filmpage';
 
 //Imports routing into app
 import {
@@ -44,10 +48,14 @@ function MyApp() {
           </Container>
         </Navbar>
 
-        {/*Used for displaying homepage content*/}
+        {/*Used for displaying specific content depending on the path*/}
         <div className="App">
           <Routes>
             <Route path='/' element={<Homepage></Homepage>}></Route>
+            <Route path='/games' element={<Gamepage></Gamepage>}></Route>
+            <Route path='/film' element={<Filmpage></Filmpage>}></Route>
+            <Route path='/chess' element={<Chesspage></Chesspage>}></Route>
+            <Route path='/comedy' element={<Comedypage></Comedypage>}></Route>
           </Routes>
         </div>
 
