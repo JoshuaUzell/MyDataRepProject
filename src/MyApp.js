@@ -10,6 +10,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container } from 'react-bootstrap';
 
+//Import homepage component
+import { Homepage } from './components/homepage';
+
 //Imports routing into app
 import {
   BrowserRouter as Router,
@@ -19,12 +22,12 @@ import {
 
 function MyApp() {
   return (
-    <div className="MyApp">
+    <div className="App">
       <Router>
         {/* Navbar for application*/}
         <Navbar collapseOnSelect bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">ATU CLUBS</Navbar.Brand>
+            <Navbar.Brand href="/">ATU CLUBS</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
@@ -40,6 +43,14 @@ function MyApp() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
+        {/*Used for displaying homepage content*/}
+        <div className="App">
+          <Routes>
+            <Route path='/' element={<Homepage></Homepage>}></Route>
+          </Routes>
+        </div>
+
       </Router>
     </div>
   );
