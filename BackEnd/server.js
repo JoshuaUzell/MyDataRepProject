@@ -30,7 +30,7 @@ mongoose.set('strictQuery', false);
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb+srv://admin:admin@cluster0.y0s8b0x.mongodb.net/?retryWrites=true&w=majority');
+    await mongoose.connect('mongodb+srv://admin:admin@cluster0.y0s8b0x.mongodb.net/DataRep?retryWrites=true&w=majority');
 }
 
 const studentSchema = new mongoose.Schema({
