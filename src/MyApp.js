@@ -18,6 +18,8 @@ import { Comedypage } from './components/comedypage';
 import { Filmpage } from './components/filmpage';
 import { SignUp } from './components/signuppage';
 import { ListOfStudents } from './components/listofstudents';
+import { EditStudent } from './components/editStudent';
+
 
 //Imports routing into app
 import {
@@ -60,6 +62,7 @@ function MyApp() {
             <Route path='/comedy' element={<Comedypage></Comedypage>}></Route>
             <Route path='/signUp' element={<SignUp></SignUp>}></Route>
             <Route path='/listOfStudents' element={<ListOfStudents></ListOfStudents>}></Route>
+            <Route path='/editStudent/:id' element={<EditStudent></EditStudent>}></Route>
           </Routes>
         </div>
 

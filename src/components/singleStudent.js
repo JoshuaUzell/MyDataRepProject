@@ -34,8 +34,8 @@ export class SingleStudent extends React.Component {
                             </footer>
                         </blockquote>
                     </Card.Body>
-                    <Link to={'/edit/' + this.props.student._id} className="btn btn-primary">Edit</Link> {/**Creates a new Edit button Link that sends user to edit page upon clicking it*/}
-                    <Button variant="danger" onClick={this.deleteStudent}>Delete</Button> {/*Creates a delete button, when its clicked, what event should be called?*/}
+                    <Link to={'/editStudent/' + this.props.student._id} className="btn btn-primary">Edit Student</Link> {/**Creates a new Edit button Link that sends user to editStudent page upon clicking it*/}
+                    <Button variant="danger" onClick={this.deleteStudent}>Delete Student</Button> {/*Creates a delete button, when its clicked, what event should be called?*/}
                 </Card>
             </div>
         );

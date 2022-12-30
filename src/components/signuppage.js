@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
+import Alert from 'react-bootstrap/Alert'; //Imports an alert
 
 export class SignUp extends React.Component {
 
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.onChangeStudentID = this.onChangeStudentID.bind(this);
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
         this.onChangeStudentAge = this.onChangeStudentAge.bind(this);
         this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
@@ -14,19 +14,28 @@ export class SignUp extends React.Component {
         this.onChangeStudentYear = this.onChangeStudentYear.bind(this);
 
         this.state = {
-            id: '',
             name: '',
             age: '',
             email: '',
             course: '',
-            year: '',
+            year: ''
         }
     }
 
+
     handleSubmit(event) {
+
+        // Check if any of the form fields are empty
+        if (this.state.name === '' || this.state.age === ''
+            || this.state.email === '' || this.state.course === ''
+            || this.state.year === '') {
+            // If any of the fields are empty, show an error message
+            alert("Failed to Sign Up. Make sure all fields are not empty")
+            return;
+        }
+
         event.preventDefault();
         console.log(`Button clicked 
-        ${this.state.id},
         ${this.state.name},
         ${this.state.age},
         ${this.state.email},
@@ -35,7 +44,6 @@ export class SignUp extends React.Component {
         `);
 
         const student = {
-            id: this.state.id,
             name: this.state.name,
             age: this.state.age,
             email: this.state.email,
@@ -48,19 +56,11 @@ export class SignUp extends React.Component {
             .catch();
 
         this.setState({
-            id: '',
             name: '',
             age: '',
             email: '',
             course: '',
             year: '',
-        })
-    }
-
-    //On change methods
-    onChangeStudentID(event) {
-        this.setState({
-            id: event.target.value
         })
     }
 
@@ -94,6 +94,8 @@ export class SignUp extends React.Component {
         })
     }
 
+ 
+
 
     //Display form
     render() {
@@ -103,16 +105,6 @@ export class SignUp extends React.Component {
 
 
                 <form onSubmit={this.handleSubmit}>
-
-                    {/* ID */}
-                    <div className="form-group">
-                        <label>Student ID: </label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.id}
-                            onChange={this.onChangeStudentID}
-                        />
-                    </div>
 
                     {/* Name */}
                     <div className="form-group">
@@ -163,8 +155,8 @@ export class SignUp extends React.Component {
                             onChange={this.onChangeStudentYear}
                         />
                     </div>
-
-                    <input type="submit" value="Submit" />
+                    <br />
+                    <input className="btn btn-outline-primary btn-lg" type="submit" value="Submit" />
                 </form>
             </div>
         );
