@@ -16,6 +16,7 @@ import { Gamepage } from './components/gamepage';
 import { Chesspage } from './components/chesspage';
 import { Comedypage } from './components/comedypage';
 import { Filmpage } from './components/filmpage';
+import { SignUp } from './components/signuppage';
 
 //Imports routing into app
 import {
@@ -56,6 +57,7 @@ function MyApp() {
             <Route path='/film' element={<Filmpage></Filmpage>}></Route>
             <Route path='/chess' element={<Chesspage></Chesspage>}></Route>
             <Route path='/comedy' element={<Comedypage></Comedypage>}></Route>
+            <Route path='/signUp' element={<SignUp></SignUp>}></Route>
           </Routes>
         </div>
 
