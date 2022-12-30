@@ -6,35 +6,24 @@ import { useNavigate } from 'react-router-dom';
 
 export function EditStudent(props) {
 
-    /**The useParams hook returns an object of key/value pairs of
-     * the dynamic params from the current URL that were matched by
-     * the <Route path>
-     */
+    //A hook that allows access to parameters in a URL, in this case the id of a student
     let { id } = useParams();
 
-    /**update arrays using the React useState()
-     * and without the Array object's push() method
-     */
-
+    //A set of hooks that each store a value of a form field
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [email, setEmail] = useState('');
     const [course, setCourse] = useState('');
     const [year, setYear] = useState('');
 
-
-    //useNavigate return a function that we can use to navigate
+    //Used to redirect the user back to a different page
     const navigate = useNavigate();
 
-    //useEffect Hook which is similar to componentDidMount
+    //A hook that makes an API call to the backend server to retrieve
+    //student data when the component is rendered.
     useEffect(() => {
-        /**axios is a promised based web client
-         * make a  HTTP Request with GET method and pass as part of the 
-         * URL
-         */
         axios.get('http://localhost:4000/api/student/' + id)
             .then((response) => {
-                //Assign Response data to the arrays using useState
                 setName(response.data.name)
                 setAge(response.data.age)
                 setEmail(response.data.email)
@@ -46,18 +35,16 @@ export function EditStudent(props) {
             })
     }, [])
 
-    const handleSubmit = (event) => {
+    //Upon submitting a form, it checks if values in the fields are valid as well as updating student info
+    const dealWithSubmit = (event) => {
         event.preventDefault();
 
-        // Check if any of the form fields are empty
         if (name === '' || age === ''
             || email === '' || course === ''
             || year === '') {
-            // If any of the fields are empty, show an error message
             alert("Failed to Update Student. Make sure all fields are not empty")
             return;
         }
-
 
         const newStudent = {
             id: id,
@@ -75,10 +62,12 @@ export function EditStudent(props) {
             });
     }
 
+    //Displays the edit student form to the user
     return (
         <div>
-            <h2>Edit Component</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>Please edit student details</h2>
+            <br/>
+            <form onSubmit={dealWithSubmit}>
 
                 {/* Name */}
                 <div className="form-group">
@@ -129,6 +118,7 @@ export function EditStudent(props) {
                         onChange={(e) => setYear(e.target.value)}
                     />
                 </div>
+                <br/>
                 <div className="form-group">
                     <input type="submit" value="Edit Student" className="btn btn-primary" />
                 </div>

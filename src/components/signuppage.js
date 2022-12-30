@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
-import Alert from 'react-bootstrap/Alert'; //Imports an alert
 
 export class SignUp extends React.Component {
 
+    //Classes constructor binds event handlers to the component as well as 
+    //setting up the components state
     constructor() {
         super();
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.dealWithSubmit = this.dealWithSubmit.bind(this);
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
         this.onChangeStudentAge = this.onChangeStudentAge.bind(this);
         this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
@@ -22,20 +23,18 @@ export class SignUp extends React.Component {
         }
     }
 
-
-    handleSubmit(event) {
-
-        // Check if any of the form fields are empty
+    //Sends a post request to the server to create a new student with the data entered in the form.
+    //Also checks for any empty fields in the form and if there is, an alert is sent to the user
+    dealWithSubmit(event) {
         if (this.state.name === '' || this.state.age === ''
             || this.state.email === '' || this.state.course === ''
             || this.state.year === '') {
-            // If any of the fields are empty, show an error message
             alert("Failed to Sign Up. Make sure all fields are not empty")
             return;
         }
 
         event.preventDefault();
-        console.log(`Button clicked 
+        console.log(`Button has been clicked
         ${this.state.name},
         ${this.state.age},
         ${this.state.email},
@@ -64,6 +63,9 @@ export class SignUp extends React.Component {
         })
     }
 
+    //The set of methods below  
+    //update the state of the component with the value
+    //of an input element in the component's form.
     onChangeStudentName(event) {
         this.setState({
             name: event.target.value
@@ -94,17 +96,13 @@ export class SignUp extends React.Component {
         })
     }
 
- 
-
-
-    //Display form
+    //Displays the form
     render() {
         return (
             <div>
-                <h3>Please enter your details</h3>
-
-
-                <form onSubmit={this.handleSubmit}>
+                <h3>Please complete the form below</h3>
+                <br/>
+                <form onSubmit={this.dealWithSubmit}>
 
                     {/* Name */}
                     <div className="form-group">

@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-//Used to display content on the homepage
+//Used to display content on the gamepage
 export class Gamepage extends React.Component {
     render() {
         return (
-            <div className='homepage'>
+            <div className='gamepage'>
                 <h1>Games Society</h1>
                 <img src="https://vignette.wikia.nocookie.net/game-society-pimps/images/1/1c/Game_society_wall.jpg/revision/latest?cb=20180313214508"
                     alt="Game image" width="700" height="400"></img>

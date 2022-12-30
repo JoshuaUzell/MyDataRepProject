@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-//Used to display content on the homepage
+//Used to display content on the chesspage
 export class Chesspage extends React.Component {
     render() {
         return (
-            <div className='homepage'>
+            <div className='chesspage'>
                 <h1>Chess Society</h1>
                 <img src="https://www.thesprucecrafts.com/thmb/SQLuChpeD-Mxmd9uOVWJZbIf7Co=/2119x1415/filters:fill(auto,1)/GettyImages-918789286-24ee5f320f524f26b9adcb9e895b0600.jpg"
                     alt="Chess image" width="700" height="400"></img>

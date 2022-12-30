@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-//Used to display content on the homepage
+//Used to display content on the filmpage
 export class Filmpage extends React.Component {
     render() {
         return (
-            <div className='homepage'>
+            <div className='filmpage'>
                 <h1>Film Society</h1>
                 <img src="https://resources.crc.losrios.edu/files/banner/program/filmandmediastudies940x529.jpg"
                     alt="Film image" width="700" height="400"></img>

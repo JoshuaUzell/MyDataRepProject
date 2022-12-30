@@ -46,7 +46,7 @@ function MyApp() {
                   <NavDropdown.Item href="/comedy">Comedy</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/signUp">SignUp</Nav.Link>
-                <Nav.Link href="/listOfStudents">List Of Students</Nav.Link>
+                <Nav.Link href="/listOfStudents">Registered Club Members</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

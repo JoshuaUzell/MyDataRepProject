@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-//Used to display content on the homepage
+//Used to display content on the comedypage
 export class Comedypage extends React.Component {
     render() {
         return (
-            <div className='homepage'>
+            <div className='comedypage'>
                 <h1>Comedy Society</h1>
                 <img src="https://discovermohican.com/wp-content/uploads/2019/06/Landolls-Comedy-Show.jpg"
                     alt="Comedy image" width="700" height="400"></img>
