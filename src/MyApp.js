@@ -32,7 +32,10 @@ function MyApp() {
   return (
     <div className="App">
       <Router>
-        {/* Navbar for application*/}
+        {/* Navbar for application
+        Comes with a drop-down menu for the activities
+        REFERENCE: https://react-bootstrap.github.io/components/navbar/
+        */}
         <Navbar collapseOnSelect bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="/">ATU CLUBS</Navbar.Brand>
